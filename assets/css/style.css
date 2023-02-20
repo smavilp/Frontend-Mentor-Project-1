@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 100%;
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  background-color: hsl(30deg, 38%, 92%);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  max-height: 38em;
+  max-width: 21.5em;
+}
+@media screen and (min-width: 1440px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    max-height: 28em;
+    max-width: 37.5em;
+  }
+}
+.main__img {
+  border-radius: 10px 10px 0 0;
+  max-height: 100%;
+}
+@media screen and (min-width: 1440px) {
+  .main__img {
+    border-radius: 10px 0 0 10px;
+  }
+}
+.main__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1em;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 0 0 10px 10px;
+  padding: 1.5em;
+}
+@media screen and (min-width: 1440px) {
+  .main__div {
+    border-radius: 0 10px 10px 0;
+    gap: 0;
+    justify-content: space-between;
+    max-height: 100%;
+    max-width: 50%;
+    padding: 2em;
+  }
+}
+.main__span {
+  color: hsl(228deg, 12%, 48%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+.main__h1 {
+  color: hsl(212deg, 21%, 14%);
+  font-family: "Fraunces", serif;
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1em;
+}
+.main__p {
+  color: hsl(228deg, 12%, 48%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875em;
+  font-weight: 500;
+  line-height: 1.6em;
+  margin-bottom: 0.4em;
+}
+.main__div--prices {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1.2em;
+}
+.main__span--price {
+  color: hsl(158deg, 36%, 37%);
+  font-family: "Fraunces", serif;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.main__del {
+  color: hsl(228deg, 12%, 48%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+.main__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  background-color: hsl(158deg, 36%, 37%);
+  border: none;
+  border-radius: 8px;
+  padding: 1.25em;
+  transition: 0.4s;
+  width: 100%;
+}
+@media screen and (min-width: 1440px) {
+  .main__btn {
+    margin-top: 0.4em;
+  }
+}
+.main__btn:hover {
+  background-color: hsl(158deg, 42%, 18%);
+}
+.main__img--btn {
+  width: 1.1em;
+}
+.main__span--btn {
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+}
+.footer__span {
+  color: hsl(212deg, 21%, 14%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+}
+.footer__a {
+  color: hsl(158deg, 36%, 37%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+}
+.footer__a:hover {
+  color: hsl(158deg, 42%, 18%);
+}
+
+/*# sourceMappingURL=style.css.map */

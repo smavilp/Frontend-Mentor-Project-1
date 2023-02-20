@@ -1,0 +1,190 @@
+// VARIABLES
+
+// Colors
+
+$dark_cyan:  hsl(158, 36%, 37%);
+$cream: hsl(30, 38%, 92%);
+$very_dark_blue:hsl(212, 21%, 14%);
+$dark_grayish_blue: hsl(228, 12%, 48%);
+$color_hover: hsl(158, 42%, 18%);
+$white:  hsl(0, 0%, 100%);
+
+// Fonts
+
+$fraunces:  'Fraunces', serif;
+$monserrat: 'Montserrat', sans-serif;
+
+
+// MIXINS
+
+@mixin responsive ($min_width){
+  @media screen and (min-width: $min_width){
+    @content;
+  }
+}
+
+@mixin flex ($direction, $just, $align, $gap){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid ($columns, $rows, $gap){
+  display: grid;
+  grid-template-columns: repeat($columns,1fr);
+  grid-template-rows: repeat($rows, 1fr);
+  gap: $gap;
+}
+
+@mixin font ($color, $family,$size,$weight){
+  color: $color;
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+// RESETS
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  font-size: 100%;
+  min-height: 100vh;
+}
+
+button{
+  cursor: pointer;
+}
+
+img{
+  display: block;
+  width: 100%;
+}
+
+// STYLES
+
+body{
+  @include flex(column, center, center, 1em);
+  background-color: $cream;
+}
+
+.main{
+  @include flex(column, center , center,0);
+  max-height: 38em;
+  max-width: 21.5em;
+
+  @include responsive(1440px){
+    @include flex(row, center, stretch,0);
+    max-height: 28em;
+    max-width: 37.5em;
+  }
+
+  &__img{
+    border-radius: 10px 10px 0 0;
+    max-height: 100%;
+
+    @include responsive(1440px){
+      border-radius: 10px 0 0 10px;
+    }
+  }
+  
+  &__div{
+  @include flex(column, center, start, 1em);
+    background-color: $white;
+    border-radius: 0 0 10px 10px ;
+    padding: 1.5em;
+
+    @include responsive(1440px){
+      border-radius: 0 10px 10px 0;
+      gap: 0;
+      justify-content: space-between;
+      max-height: 100%;
+      max-width: 50%;
+      padding: 2em;
+    }
+  }
+
+  &__span{
+    @include font($dark_grayish_blue, $monserrat, 0.75em, 500);
+    letter-spacing: 5px;
+  }
+
+  &__h1{
+    @include font($very_dark_blue, $fraunces, 2em, 700);
+    line-height: 1em
+  }
+
+  &__p{
+    @include font($dark_grayish_blue, $monserrat, 0.875em, 500);
+    line-height: 1.6em;
+    margin-bottom: .4em;
+  }
+
+  &__div--prices{
+    @include flex(row, start, center, 1.2em)
+  }
+
+  &__span--price{
+    @include font($dark_cyan, $fraunces, 2em, 700);
+    letter-spacing: 0;
+  }
+
+  &__del{
+    @include font($dark_grayish_blue,$monserrat, .8em,500)
+  }
+
+  &__btn{
+    @include flex(row,center,center,1em);
+    background-color: $dark_cyan;
+    border: none;
+    border-radius: 8px;
+    padding: 1.25em;
+    transition: .4s;
+    width: 100%;
+
+    @include responsive(1440px){
+      margin-top: .4em;
+    }
+
+    &:hover{
+      background-color: $color_hover;
+    }
+
+
+  }
+
+  &__img--btn{
+    width: 1.1em;
+  }
+
+  &__span--btn{
+    @include font($white, $monserrat, 1em, 700)
+  }
+}
+
+.footer{
+  @include flex(column, center, center,.25em);
+
+  &__span{
+    @include font($very_dark_blue, $monserrat, 1em,500);
+  }
+
+  &__a{
+    @include font($dark_cyan, $monserrat, 1em,500);
+
+    &:hover{
+      color: $color_hover;
+    }
+  }
+}
+

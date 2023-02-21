@@ -31,13 +31,6 @@ $monserrat: 'Montserrat', sans-serif;
   gap: $gap;
 }
 
-@mixin grid ($columns, $rows, $gap){
-  display: grid;
-  grid-template-columns: repeat($columns,1fr);
-  grid-template-rows: repeat($rows, 1fr);
-  gap: $gap;
-}
-
 @mixin font ($color, $family,$size,$weight){
   color: $color;
   font-family: $family;
